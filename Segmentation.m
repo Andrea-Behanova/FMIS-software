@@ -402,7 +402,7 @@ function menu_Callback(hObject, eventdata, handles)
 
 function open_Callback(hObject, eventdata, handles)
 % [filename, pathname] = uigetfile('*.czi*');
-[Files pathname]=uigetfile('*.czi', 'Chose files to load:','MultiSelect','on');
+[Files, pathname]=uigetfile('*.czi', 'Select files to load:','MultiSelect','on');
 
 if size(Files,2) == 1
     return
@@ -509,7 +509,7 @@ else
     handles.indx = indx;
     data = handles.data{indx};
     
-    imshow(cat(3, data{2,1}, data{3,1}, data{4,1}))
+    imshow(cat(3, data{1,1}, data{3,1}, data{4,1}))
     set(handles.channelAll,'Value',1)
 end
 
